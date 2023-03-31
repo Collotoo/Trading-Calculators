@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Trading_Calculators.MVVM.View.RiskView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Trading_Calculators.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#1B1B1B">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Choose Formula:" Foreground="White" />
+        <ComboBox Grid.Row="0" Grid.Column="1" x:Name="FormulaComboBox"
+                  SelectedIndex="0"
+                  SelectionChanged="FormulaComboBox_SelectionChanged"
+                  Width="200" HorizontalAlignment="Left">
+            <ComboBoxItem Content="Kaufmann Model"/>
+            <ComboBoxItem Content="Ralph Model"/>
+        </ComboBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Win Percentage:" Foreground="White" Visibility="Visible"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="WinPercentage" Margin="0,10" TextChanged="InputTextBox_TextChanged" Width="200" HorizontalAlignment="Left"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Loss Percentage:" Foreground="White" Visibility="Visible"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="LossPercentage" Margin="0,10" TextChanged="InputTextBox_TextChanged" Width="200" HorizontalAlignment="Left"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Number of Trades:" Foreground="White" Visibility="Visible"/>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="NoOfTrades" Margin="0,10" Visibility="Visible" TextChanged="InputTextBox_TextChanged" Width="200" HorizontalAlignment="Left"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Maximum Risk:" Foreground="White" Visibility="Collapsed"/>
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="MaxRisk" Margin="0,10" Visibility="Collapsed" TextChanged="InputTextBox_TextChanged" Width="200" HorizontalAlignment="Left"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Average Winner:" Foreground="White" Visibility="Collapsed"/>
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="AverageWinner" Margin="0,10" Visibility="Collapsed" TextChanged="InputTextBox_TextChanged" Width="200" HorizontalAlignment="Left"/>
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Average Loser:" Foreground="White" Visibility="Collapsed"/>
+        <TextBox Grid.Row="6" Grid.Column="1" x:Name="AverageLoser" Margin="0,10" Visibility="Collapsed" TextChanged="InputTextBox_TextChanged" Width="200" HorizontalAlignment="Left"/>
+
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="Initial Capital:" Foreground="White" Visibility="Collapsed"/>
+        <TextBox Grid.Row="7" Grid.Column="1" x:Name="InitialCapital" Margin="0,10" Visibility="Collapsed" TextChanged="InputTextBox_TextChanged" Width="200" HorizontalAlignment="Left"/>
+
+        <Button Grid.Row="8" Grid.Column="1" x:Name="CalculateButton" Content="Calculate" Click="CalculateButton_Click" Margin="0,10" Width="200" HorizontalAlignment="Left"/>
+        <Label Grid.Row="9" Grid.Column="1" x:Name="PositionSizeLabel" Margin="0,10" Foreground="White"/>
+
+
+
+
+    </Grid>
+   
+
+    
+</UserControl>

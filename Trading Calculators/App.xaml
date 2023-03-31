@@ -1,0 +1,26 @@
+﻿<Application x:Class="Trading_Calculators.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Trading_Calculators"
+             xmlns:viewModel="clr-namespace:Trading_Calculators.MVVM.ViewModel"
+             xmlns:view="clr-namespace:Trading_Calculators.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>                
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:RiskViewModel}">
+                <view:RiskView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:PositionSizeViewModel}">
+                <view:PositionSizeView/>
+            </DataTemplate>
+        </ResourceDictionary>
+         
+    </Application.Resources>
+</Application>
